@@ -1,11 +1,8 @@
-
-
-
 enum type {
 	Terrestrial, Jovian
 };
 
-int kamp1(const void* a, const void* b)
+int vuraz(const void* a, const void* b)
 {
 	return (*(int*)a - *(int*)b);
 }
@@ -22,8 +19,8 @@ class Planet {
 	friend void Mass(Planet& first, Planet& second);
 
 public:
-	std::string name;
-	int mass, orbital_velocity, mean_temperature, length_of_day, distance_from_sun, type;
+	string name;
+	int mass, mean_temperature, orbital_velocity,length_of_day, distance_from_sun, type;
 
 	Planet() {}
 
@@ -41,18 +38,18 @@ public:
 	}
 
 	void getkg() {
-		std::cout << this->mass << "kg" << endl;
+	cout << this->mass << "kg" << endl;
 	}
 
 	void getname() {
-		std::cout << this->name << endl;
+	cout << this->name << endl;
 	}
 
 };
 
 
 
-class Planets2
+class Planet2
 {
 private:
 	static const int kd = 2;
@@ -65,7 +62,7 @@ public:
 	{
 		this->planets_list[n] = &planet;
 		n = n + 1;
-		std::cout << n << endl;
+		cout << n << endl;
 	}
 
 	void sort()
@@ -75,19 +72,23 @@ public:
 		{
 			days[i] = this->planets_list[i]->distance_from_sun;
 		}
-		qsort(days, n, sizeof(int), kamp1);
+
+
+		qsort(days, n, sizeof(int), vuraz);
+		
+
 		for (int i = 0; i < kd; i++)
 		{
-			std::cout << days[i] << " " << " ";
+		cout << days[i] << " " << " ";
 		}
 	}
 
-	void getinfo(std::string planet_n)
+	void get_info(std::string planet_n)
 	{
 		for (int i = 0; i < kd; i++) {
 			if (planet_n == planets_list[i]->name)
 			{
-				std::cout << this->planets_list[i]->name << " " << this->planets_list[i]->mass << "/" << "kg" << endl;
+			cout << this->planets_list[i]->name << " " << this->planets_list[i]->mass << "/" << "kg" << endl;
 			}
 		}
 	}
@@ -95,16 +96,16 @@ public:
 
 
 
-void Distance(Planet& first, Planet& second)
+void Distance(Planet& first, Planet& second)	
 {
-	int distan;
-	distan = first.distance_from_sun - second.distance_from_sun;
-	std::cout << distan << "-" << "riznuca vidstani" << endl;
+	int distance;
+	distance = first.distance_from_sun - second.distance_from_sun;
+	cout << distance << "\t" << "riznuca vidstani" << endl;
 }
 
 void Mass(Planet& first, Planet& second)
 {
-	int rmas;
-	rmas = first.mass - second.mass;
-	std::cout << rmas << "-" << "riznuca masu" << endl;
+	int armas;
+	armas = first.mass - second.mass;
+	cout << armas << "\t" << "riznuca masu" << endl;
 }
