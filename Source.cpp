@@ -29,16 +29,16 @@ using namespace std;
 	saturn.type = Terrestrial;
 	saturn.type = Jovian;
 
-	Planets2 planets;
+	Planet2 planets;
 
 	planets.addPlanet(neptun);
 	planets.addPlanet(saturn);
 
 	planets.sort();
-	planets.getinfo("Neptun");
+	planets.get_info("Neptun");
 
 	planets.sort();
-	planets.getinfo("Saturn");
+	planets.get_info("Saturn");
 
     Distance(neptun, saturn);
     Mass(neptun, saturn);
