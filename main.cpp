@@ -1,47 +1,42 @@
 #include <iostream>
 #include <string>
 #include <math.h>
-#include "Header.h"
-
+#include "Planet1.h"
+#include "Planet2.h"
 using namespace std;
 
+int main()
+{
 
-
-
-
-
-	int main() 
-	{
-
-	Planet neptun = Planet();
+	Planets neptun = Planets();
 	neptun.name = "Neptun";
 	neptun.mass = 59000;
-	neptun.length_of_day = 50 ;
+	neptun.length_of_day = 75;
 	neptun.distance_from_sun = 4;
 	neptun.type = Terrestrial;
 	neptun.type = Jovian;
 
-	Planet saturn;
+	Planets saturn;
 	saturn.name = "Saturn";
 	saturn.mass = 25000;
-	saturn.length_of_day = 75;
+	saturn.length_of_day = 50;
 	saturn.distance_from_sun = 1;
 	saturn.type = Terrestrial;
 	saturn.type = Jovian;
 
-	Planets2 planets;
+	Planet2 planets;
 
-	planets.addPlanet(neptun);
-	planets.addPlanet(saturn);
-
-	planets.sort();
-	planets.getinfo("Neptun");
+	planets.add_Planet(neptun);
+	planets.add_Planet(saturn);
 
 	planets.sort();
-	planets.getinfo("Saturn");
+	planets.get_info("Neptun");
 
-    Distance(neptun, saturn);
-    Mass(neptun, saturn);
+	planets.sort();
+	planets.get_info("Saturn");
+
+	Distance(neptun, saturn);
+	Mass(neptun, saturn);
 
 	return 0;
-	}
+}
